@@ -21,9 +21,8 @@ function removeLoadingSpinner() {
 async function getQuote() {
   showLoadingSpinner();
   // Use proxy URL for API call to avoid CORS error
-  const proxyUrl = "https://jpo-proxy-server.herokuapp.com/";
-  const apiUrl =
-    "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
+  const proxyUrl = "https://jpo-cors-proxy.herokuapp.com/";
+  const apiUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
   try {
     const response = await fetch(proxyUrl + apiUrl);
     const data = await response.json();
